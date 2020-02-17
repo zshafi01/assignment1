@@ -2,13 +2,13 @@
 
 Follow these steps:
 
-1. GitHub
+### 1. GitHub
 
   1. Fork this repository (hint: [Fork an example repository](https://help.github.com/en/github/getting-started-with-github/fork-a-repo#fork-an-example-repository))
 
   2. Add your partner as a collaborator to your forked repository (hint: [Inviting collaborators to a personal repository](https://help.github.com/en/github/setting-up-and-managing-your-github-user-account/inviting-collaborators-to-a-personal-repository))
 
-2. Your Computer
+### 2. Your Computer
 
   1. Open your terminal or command prompt
 
@@ -34,7 +34,7 @@ Follow these steps:
 
   12. Once complete, zip your "assignment1" folder
 
-3. HackerRank
+### 3. HackerRank
 
   1. Navigate to [this assignment on HackerRank](https://www.hackerrank.com/tests/6o9fk556dqc/8b978d6b7f2c543e83b2c0cef536bb34?try_test=true&email=angela@meritamerica.org)
 
