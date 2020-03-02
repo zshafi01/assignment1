@@ -2,8 +2,8 @@ package com.meritamerica.assignment1;
 public class CheckingAccount {
 	
 	private double  balance;
-	public final double ANNUAL_INTEREST_RATE=0.01;
-	private double  futureBalance;
+	public  double interestRate=0.0001;
+	private double  futureValue;
 	private int year;
 	
 	public double getBalance() {
@@ -14,35 +14,55 @@ public class CheckingAccount {
 	}
 
 	
-	public double getFutureBalance() {
-		return futureBalance;
+	public double getFutureValue() {
+		return futureValue;
 	}
-	public void setFutureBalance(double futureBalance) {
-		this.futureBalance = futureBalance;
+	public void setFutureValue(double futureValue) {
+		this.futureValue = futureValue;
 	}
 	//deposite method
-	public void deposite(double amount)
+	public boolean deposit(double amount)
 	{
-		this.balance=this.balance + amount;
+		if(amount>0) {
+			this.balance=this.balance + amount;
+			return true;
+		}else {
+			return false;
+		}
+		
+		
 	}
 	
 	//withdow method
-	public void withdrow(double amount)
+	public boolean withdraw(double amount)
 	{
-		this.balance=this.balance - amount;
+		if(balance>=amount) {
+			this.balance=this.balance - amount;
+			return true;
+		}else {
+			return false;
+		}
 	}
 	
+	
+	
+	public double getInterestRate() {
+		return interestRate;
+	}
+	public void setInterestRate(double interestRate) {
+		interestRate = interestRate;
+	}
 	//futurebalance method
-	public double calculatFutureBalance(int year) {
+	public double futureValue(int year) {
 		this.year=year;
-		this.futureBalance= this.balance * Math.pow((1+ this.ANNUAL_INTEREST_RATE),year);
-		return this.futureBalance;
+		this.futureValue= this.balance * Math.pow((1+ this.interestRate),year);
+		return this.futureValue;
 	}
 	@Override
 	public String toString() {
 		return "Checking Account Balance: " + this.balance +
-				"\n Checking Account Interest Rate" + this.ANNUAL_INTEREST_RATE +
-				"\n Checking Account Balance in " + this.year +   "years: " + this.futureBalance
+				"\n Checking Account Interest Rate" + this.interestRate +
+				"\n Checking Account Balance in " + this.year +   "years: " + this.futureValue
 				;
 	}
 	

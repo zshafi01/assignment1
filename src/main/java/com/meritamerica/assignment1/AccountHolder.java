@@ -6,8 +6,8 @@ String lastName;
 String SSN;
 double checkingAccountOpeningBalance;
 double savingsAccountOpeningBalance;
-SavingsAccount savingAccount = new SavingsAccount();
-CheckingAccount chackingAccount = new CheckingAccount();
+SavingsAccount savingsAccount = new SavingsAccount();
+CheckingAccount checkingAccount = new CheckingAccount();
 
 public AccountHolder(String fristName, String MiddleName, String lastName, String socialSecurityNumber, double checkingAccountOpeningBalance,
 double savingsAccountOpeningBalance) {
@@ -18,12 +18,13 @@ double savingsAccountOpeningBalance) {
 	//take the saving opning balance
 	this.savingsAccountOpeningBalance = savingsAccountOpeningBalance;
 	//set to the saving account balance
-	this.savingAccount.setBalance(savingsAccountOpeningBalance);
+	this.savingsAccount.setBalance(savingsAccountOpeningBalance);
 	
 	this.checkingAccountOpeningBalance = checkingAccountOpeningBalance;
-	this.chackingAccount.setBalance(checkingAccountOpeningBalance);
+	this.checkingAccount.setBalance(checkingAccountOpeningBalance);
 
 }
+
 
 public String getFristName() {
 	return fristName;
@@ -73,14 +74,38 @@ public void setSavingsAccountOpeningBalance(double savingsAccountOpeningBalance)
 	this.savingsAccountOpeningBalance = savingsAccountOpeningBalance;
 }
 
+
+
+public SavingsAccount getSavingsAccount() {
+	return savingsAccount;
+}
+
+
+public void setSavingsAccount(SavingsAccount savingsAccount) {
+	this.savingsAccount = savingsAccount;
+}
+
+
+public CheckingAccount getCheckingAccount() {
+	return checkingAccount;
+}
+
+
+public void setCheckingAccount(CheckingAccount checkingAccount) {
+	this.checkingAccount = checkingAccount;
+}
+
+
 @Override
 public String toString() {
 	return " Name: " + fristName + " " + MiddleName + " " + lastName
 			+ "\n SSN: " + SSN + 
-			chackingAccount.toString()+
-			savingAccount.toString() +
+			checkingAccount.toString()+
+			savingsAccount.toString() +
 			"";
 }
+
+
 
 
 

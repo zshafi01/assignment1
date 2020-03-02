@@ -2,8 +2,8 @@ package com.meritamerica.assignment1;
 public class SavingsAccount {
 	
 	private double  balance;
-	public final double ANNUAL_INTEREST_RATE= 1.00;
-	private double  futureBalance;
+	public  double interestRate= 0.01;
+	private double  futureValue;
 	private int month;
 	
 	public double getBalance() {
@@ -15,29 +15,59 @@ public class SavingsAccount {
 	
 	
 	//method deposite
-	public void deposite(double amount)
+	public boolean deposit(double amount)
 	{
-		this.balance=this.balance + amount;
+		if(amount>0) {
+			this.balance=this.balance + amount;
+			return true;
+		}else {
+			return false;
+		}
 	}
 	
 	//method withdrow
-	public void withdrow(double amount)
+	public boolean withdraw(double amount)
 	{
-		this.balance=this.balance - amount;
+		if(balance>=amount) {
+			this.balance=this.balance - amount;
+			return true;
+		}else {
+			return false;
+		}
+		
 	}
 	
+	
+	
+	public double getFutureValue() {
+		return futureValue;
+	}
+	public void setFutureValue(double futureValue) {
+		this.futureValue = futureValue;
+	}
+	public double getInterestRate() {
+		return interestRate;
+	}
+	public void setInterestRate(double interestRate) {
+		this.interestRate = interestRate;
+	}
 	//method futurebalance
-	public double calcuatFutureBalance(int month) {
+	public double futureValue(int month) {
 	this.month=month;
 	
-		this.futureBalance=this.balance * Math.pow((1+this.ANNUAL_INTEREST_RATE), month);
-		return this.futureBalance;
+		this.futureValue=this.balance * Math.pow((1+this.interestRate), month);
+		return this.futureValue;
 	}
+	
+	
+	
+	
+	
 	@Override
 	public String toString() {
 		return " Savings Account Balance:" + this.balance +
-				"\n Savings Account Interest Rate: " + this.ANNUAL_INTEREST_RATE +
-				"\n Savings Account Balance in" + (this.month/12)  + "years:" + this.futureBalance;
+				"\n Savings Account Interest Rate: " + this.interestRate +
+				"\n Savings Account Balance in" + (this.month/12)  + "years:" + this.futureValue;
 				
 	
 	}
